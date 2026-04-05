@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-debug-45:\\layout_item_record.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-main-47:\\layout\\item_record.xml"
+    },
+    {
+        "merged": "com.bulliongrin.app-debug-45:/drawable_app_icon.png.flat",
+        "source": "com.bulliongrin.app-main-47:/drawable/app_icon.png"
+    },
+    {
+        "merged": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-debug-45:\\layout_activity_add_contribution.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-main-47:\\layout\\activity_add_contribution.xml"
+    },
+    {
+        "merged": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-debug-45:\\drawable_bg_chip_small.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-main-47:\\drawable\\bg_chip_small.xml"
+    },
+    {
+        "merged": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-debug-45:\\layout_activity_settings.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-main-47:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-debug-45:\\layout_activity_records.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-main-47:\\layout\\activity_records.xml"
+    },
+    {
+        "merged": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-debug-45:\\drawable_app_icon.png.flat",
+        "source": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-main-47:\\drawable\\app_icon.png"
+    },
+    {
+        "merged": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-debug-45:\\layout_activity_main.xml.flat",
+        "source": "D:\\.gradle\\daemon\\8.6\\com.bulliongrin.app-main-47:\\layout\\activity_main.xml"
+    }
+]
