@@ -3158,6 +3158,7 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
+id actvCurrency
 id actvFrequency
 id add
 id alertTitle
@@ -3564,6 +3565,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id tilAmount
+id tilCurrency
 id tilFrequency
 id tilNote
 id time
@@ -3992,6 +3994,7 @@ string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
+string select_currency
 string settings
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior

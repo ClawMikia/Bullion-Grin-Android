@@ -4,6 +4,7 @@ package com.bulliongrin.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +13,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bulliongrin.app.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.android.material.textfield.TextInputLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,10 +23,16 @@ public final class ActivitySettingsBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final AutoCompleteTextView actvCurrency;
+
+  @NonNull
   public final SwitchMaterial switchDarkMode;
 
   @NonNull
   public final SwitchMaterial switchNotifications;
+
+  @NonNull
+  public final TextInputLayout tilCurrency;
 
   @NonNull
   public final TextView tvAbout;
@@ -33,11 +41,14 @@ public final class ActivitySettingsBinding implements ViewBinding {
   public final TextView tvTitle;
 
   private ActivitySettingsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull SwitchMaterial switchDarkMode, @NonNull SwitchMaterial switchNotifications,
+      @NonNull AutoCompleteTextView actvCurrency, @NonNull SwitchMaterial switchDarkMode,
+      @NonNull SwitchMaterial switchNotifications, @NonNull TextInputLayout tilCurrency,
       @NonNull TextView tvAbout, @NonNull TextView tvTitle) {
     this.rootView = rootView;
+    this.actvCurrency = actvCurrency;
     this.switchDarkMode = switchDarkMode;
     this.switchNotifications = switchNotifications;
+    this.tilCurrency = tilCurrency;
     this.tvAbout = tvAbout;
     this.tvTitle = tvTitle;
   }
@@ -69,6 +80,12 @@ public final class ActivitySettingsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.actvCurrency;
+      AutoCompleteTextView actvCurrency = ViewBindings.findChildViewById(rootView, id);
+      if (actvCurrency == null) {
+        break missingId;
+      }
+
       id = R.id.switchDarkMode;
       SwitchMaterial switchDarkMode = ViewBindings.findChildViewById(rootView, id);
       if (switchDarkMode == null) {
@@ -78,6 +95,12 @@ public final class ActivitySettingsBinding implements ViewBinding {
       id = R.id.switchNotifications;
       SwitchMaterial switchNotifications = ViewBindings.findChildViewById(rootView, id);
       if (switchNotifications == null) {
+        break missingId;
+      }
+
+      id = R.id.tilCurrency;
+      TextInputLayout tilCurrency = ViewBindings.findChildViewById(rootView, id);
+      if (tilCurrency == null) {
         break missingId;
       }
 
@@ -93,8 +116,8 @@ public final class ActivitySettingsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySettingsBinding((ConstraintLayout) rootView, switchDarkMode,
-          switchNotifications, tvAbout, tvTitle);
+      return new ActivitySettingsBinding((ConstraintLayout) rootView, actvCurrency, switchDarkMode,
+          switchNotifications, tilCurrency, tvAbout, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

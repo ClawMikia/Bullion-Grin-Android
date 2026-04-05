@@ -10,6 +10,7 @@ color secondary
 color white
 drawable app_icon
 drawable bg_chip_small
+id actvCurrency
 id actvFrequency
 id btnAddContribution
 id btnSave
@@ -29,6 +30,7 @@ id rvRecords
 id switchDarkMode
 id switchNotifications
 id tilAmount
+id tilCurrency
 id tilFrequency
 id tilNote
 id tvAbout
@@ -61,6 +63,7 @@ string optional_note
 string quarterly
 string records
 string save
+string select_currency
 string settings
 string theme_toggle
 string total_saved
