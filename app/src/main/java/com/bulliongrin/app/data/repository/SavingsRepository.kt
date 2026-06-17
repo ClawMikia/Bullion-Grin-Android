@@ -26,7 +26,7 @@ class SavingsRepository(private val dao: SavingsDao) {
         var newStreak = currentStats.streak
         if (currentStats.lastSaveDate > 0) {
             val diff = currentTime - currentStats.lastSaveDate
-            if (diff <= oneDayMillis * 2) { // If saved within 48 hours, keep streak
+            if (diff <= (oneDayMillis * 2)) { // If saved within 48 hours, keep streak
                 if (diff >= oneDayMillis) { // If at least 24 hours passed, increment
                     newStreak++
                 }
@@ -48,7 +48,7 @@ class SavingsRepository(private val dao: SavingsDao) {
         if (newStreak >= 7 && !currentAchievements.contains("streak_7")) {
             currentAchievements.add("streak_7")
         }
-        if (currentStats.totalSaved + amount >= 1000 && !currentAchievements.contains("milestone_1000")) {
+        if ((currentStats.totalSaved + amount) >= 1000 && !currentAchievements.contains("milestone_1000")) {
             currentAchievements.add("milestone_1000")
         }
 
@@ -57,13 +57,9 @@ class SavingsRepository(private val dao: SavingsDao) {
             streak = newStreak,
             lastSaveDate = currentTime,
             totalSaved = currentStats.totalSaved + amount,
-            achievements = currentAchievements.filter { it.isNotEmpty() }.joinToString(",")
+            achievements = currentAchievements.filter { it.isNotEmpty() }.joinToString(","),
         )
         
         dao.insertOrUpdateStats(updatedStats)
-    }
-
-    fun getRecordsInRange(start: Long, end: Long): LiveData<List<SavingsRecord>> {
-        return dao.getRecordsInDateRange(start, end)
     }
 }

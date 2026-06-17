@@ -6,17 +6,15 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import com.bulliongrin.app.R
 import com.bulliongrin.app.databinding.ActivityMainBinding
 import com.bulliongrin.app.utils.CurrencyUtils
 import com.bulliongrin.app.viewmodel.SavingsViewModel
-import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel: SavingsViewModel by viewModels()
-    private val PREFS_NAME = "BullionGrinPrefs"
-    private val KEY_DARK_MODE = "dark_mode"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         applyTheme()
@@ -56,8 +54,8 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.userStats.observe(this) { stats ->
             if (stats != null) {
-                binding.tvStreak.text = "${stats.streak} 🔥"
-                binding.tvXP.text = "${stats.xp} XP"
+                binding.tvStreak.text = getString(R.string.streak_format, stats.streak)
+                binding.tvXP.text = getString(R.string.xp_format, stats.xp)
             }
         }
     }
@@ -74,5 +72,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnSettings.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
+    }
+
+    companion object {
+        private const val PREFS_NAME = "BullionGrinPrefs"
+        private const val KEY_DARK_MODE = "dark_mode"
     }
 }

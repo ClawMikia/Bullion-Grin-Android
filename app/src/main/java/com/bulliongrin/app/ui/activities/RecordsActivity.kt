@@ -43,8 +43,10 @@ class RecordsActivity : AppCompatActivity() {
     }
 
     private fun setupFilters() {
-        binding.cgFilters.setOnCheckedChangeListener { _, checkedId ->
-            val records = viewModel.allRecords.value ?: return@setOnCheckedChangeListener
+        binding.cgFilters.setOnCheckedStateChangeListener { _, checkedIds ->
+            val records = viewModel.allRecords.value ?: return@setOnCheckedStateChangeListener
+            val checkedId = checkedIds.firstOrNull()
+
             val filteredRecords = when (checkedId) {
                 binding.chipDaily.id -> records.filter { it.frequency == "Daily" }
                 binding.chipWeekly.id -> records.filter { it.frequency == "Weekly" }

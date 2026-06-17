@@ -4,25 +4,6 @@
             "outputFile": "com.bulliongrin.app-mergeDebugResources-43:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "D:\\Android Studio Projects\\BullionGrin\\app\\src\\main\\res\\values-night\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "100",
-                        "endLines": "15",
-                        "endColumns": "12",
-                        "endOffsets": "858"
-                    },
-                    "to": {
-                        "startLines": "9",
-                        "startColumns": "4",
-                        "startOffsets": "732",
-                        "endLines": "22",
-                        "endColumns": "12",
-                        "endOffsets": "1383"
-                    }
-                },
-                {
                     "source": "D:\\.gradle\\caches\\transforms-4\\103df599988d4da89a096268f4456e78\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -54,6 +35,25 @@
                         "startOffsets": "1388,1463,1574,1663,1764,1871,1978,2077,2184,2287,2375,2499,2601,2703,2819,2921,3035,3163,3279,3401,3537,3657,3791,3911,4023,4238,4355,4479,4609,4731,4869,5003,5119",
                         "endColumns": "74,110,88,100,106,106,98,106,102,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
                         "endOffsets": "1458,1569,1658,1759,1866,1973,2072,2179,2282,2370,2494,2596,2698,2814,2916,3030,3158,3274,3396,3532,3652,3786,3906,4018,4144,4350,4474,4604,4726,4864,4998,5114,5234"
+                    }
+                },
+                {
+                    "source": "D:\\Android Studio Projects\\Bullion-Grin-Android\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "15",
+                        "endColumns": "12",
+                        "endOffsets": "873"
+                    },
+                    "to": {
+                        "startLines": "9",
+                        "startColumns": "4",
+                        "startOffsets": "732",
+                        "endLines": "22",
+                        "endColumns": "12",
+                        "endOffsets": "1383"
                     }
                 }
             ]

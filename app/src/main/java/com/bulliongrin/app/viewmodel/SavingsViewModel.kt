@@ -31,13 +31,9 @@ class SavingsViewModel(application: Application) : AndroidViewModel(application)
                 amount = amount,
                 date = System.currentTimeMillis(),
                 frequency = frequency,
-                note = note
+                note = note,
             )
             repository.insertRecord(record)
         }
-    }
-
-    fun getRecordsInRange(start: Long, end: Long): LiveData<List<SavingsRecord>> {
-        return repository.getRecordsInRange(start, end)
     }
 }

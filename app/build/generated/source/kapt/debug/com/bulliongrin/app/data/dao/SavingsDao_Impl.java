@@ -73,21 +73,22 @@ public final class SavingsDao_Impl implements SavingsDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `user_stats` (`id`,`xp`,`streak`,`lastSaveDate`,`totalSaved`,`achievements`) VALUES (?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `user_stats` (`id`,`streak`,`lastSaveDate`,`totalSaved`,`xp`,`level`,`achievements`) VALUES (?,?,?,?,?,?,?)";
       }
 
       @Override
       protected void bind(@NonNull final SupportSQLiteStatement statement,
           @NonNull final UserStats entity) {
         statement.bindLong(1, entity.getId());
-        statement.bindLong(2, entity.getXp());
-        statement.bindLong(3, entity.getStreak());
-        statement.bindLong(4, entity.getLastSaveDate());
-        statement.bindDouble(5, entity.getTotalSaved());
+        statement.bindLong(2, entity.getStreak());
+        statement.bindLong(3, entity.getLastSaveDate());
+        statement.bindDouble(4, entity.getTotalSaved());
+        statement.bindLong(5, entity.getXp());
+        statement.bindLong(6, entity.getLevel());
         if (entity.getAchievements() == null) {
-          statement.bindNull(6);
+          statement.bindNull(7);
         } else {
-          statement.bindString(6, entity.getAchievements());
+          statement.bindString(7, entity.getAchievements());
         }
       }
     };
@@ -95,23 +96,24 @@ public final class SavingsDao_Impl implements SavingsDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `user_stats` SET `id` = ?,`xp` = ?,`streak` = ?,`lastSaveDate` = ?,`totalSaved` = ?,`achievements` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `user_stats` SET `id` = ?,`streak` = ?,`lastSaveDate` = ?,`totalSaved` = ?,`xp` = ?,`level` = ?,`achievements` = ? WHERE `id` = ?";
       }
 
       @Override
       protected void bind(@NonNull final SupportSQLiteStatement statement,
           @NonNull final UserStats entity) {
         statement.bindLong(1, entity.getId());
-        statement.bindLong(2, entity.getXp());
-        statement.bindLong(3, entity.getStreak());
-        statement.bindLong(4, entity.getLastSaveDate());
-        statement.bindDouble(5, entity.getTotalSaved());
+        statement.bindLong(2, entity.getStreak());
+        statement.bindLong(3, entity.getLastSaveDate());
+        statement.bindDouble(4, entity.getTotalSaved());
+        statement.bindLong(5, entity.getXp());
+        statement.bindLong(6, entity.getLevel());
         if (entity.getAchievements() == null) {
-          statement.bindNull(6);
+          statement.bindNull(7);
         } else {
-          statement.bindString(6, entity.getAchievements());
+          statement.bindString(7, entity.getAchievements());
         }
-        statement.bindLong(7, entity.getId());
+        statement.bindLong(8, entity.getId());
       }
     };
   }
@@ -327,30 +329,33 @@ public final class SavingsDao_Impl implements SavingsDao {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfXp = CursorUtil.getColumnIndexOrThrow(_cursor, "xp");
           final int _cursorIndexOfStreak = CursorUtil.getColumnIndexOrThrow(_cursor, "streak");
           final int _cursorIndexOfLastSaveDate = CursorUtil.getColumnIndexOrThrow(_cursor, "lastSaveDate");
           final int _cursorIndexOfTotalSaved = CursorUtil.getColumnIndexOrThrow(_cursor, "totalSaved");
+          final int _cursorIndexOfXp = CursorUtil.getColumnIndexOrThrow(_cursor, "xp");
+          final int _cursorIndexOfLevel = CursorUtil.getColumnIndexOrThrow(_cursor, "level");
           final int _cursorIndexOfAchievements = CursorUtil.getColumnIndexOrThrow(_cursor, "achievements");
           final UserStats _result;
           if (_cursor.moveToFirst()) {
             final int _tmpId;
             _tmpId = _cursor.getInt(_cursorIndexOfId);
-            final int _tmpXp;
-            _tmpXp = _cursor.getInt(_cursorIndexOfXp);
             final int _tmpStreak;
             _tmpStreak = _cursor.getInt(_cursorIndexOfStreak);
             final long _tmpLastSaveDate;
             _tmpLastSaveDate = _cursor.getLong(_cursorIndexOfLastSaveDate);
             final double _tmpTotalSaved;
             _tmpTotalSaved = _cursor.getDouble(_cursorIndexOfTotalSaved);
+            final int _tmpXp;
+            _tmpXp = _cursor.getInt(_cursorIndexOfXp);
+            final int _tmpLevel;
+            _tmpLevel = _cursor.getInt(_cursorIndexOfLevel);
             final String _tmpAchievements;
             if (_cursor.isNull(_cursorIndexOfAchievements)) {
               _tmpAchievements = null;
             } else {
               _tmpAchievements = _cursor.getString(_cursorIndexOfAchievements);
             }
-            _result = new UserStats(_tmpId,_tmpXp,_tmpStreak,_tmpLastSaveDate,_tmpTotalSaved,_tmpAchievements);
+            _result = new UserStats(_tmpId,_tmpStreak,_tmpLastSaveDate,_tmpTotalSaved,_tmpXp,_tmpLevel,_tmpAchievements);
           } else {
             _result = null;
           }
@@ -379,30 +384,33 @@ public final class SavingsDao_Impl implements SavingsDao {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfXp = CursorUtil.getColumnIndexOrThrow(_cursor, "xp");
           final int _cursorIndexOfStreak = CursorUtil.getColumnIndexOrThrow(_cursor, "streak");
           final int _cursorIndexOfLastSaveDate = CursorUtil.getColumnIndexOrThrow(_cursor, "lastSaveDate");
           final int _cursorIndexOfTotalSaved = CursorUtil.getColumnIndexOrThrow(_cursor, "totalSaved");
+          final int _cursorIndexOfXp = CursorUtil.getColumnIndexOrThrow(_cursor, "xp");
+          final int _cursorIndexOfLevel = CursorUtil.getColumnIndexOrThrow(_cursor, "level");
           final int _cursorIndexOfAchievements = CursorUtil.getColumnIndexOrThrow(_cursor, "achievements");
           final UserStats _result;
           if (_cursor.moveToFirst()) {
             final int _tmpId;
             _tmpId = _cursor.getInt(_cursorIndexOfId);
-            final int _tmpXp;
-            _tmpXp = _cursor.getInt(_cursorIndexOfXp);
             final int _tmpStreak;
             _tmpStreak = _cursor.getInt(_cursorIndexOfStreak);
             final long _tmpLastSaveDate;
             _tmpLastSaveDate = _cursor.getLong(_cursorIndexOfLastSaveDate);
             final double _tmpTotalSaved;
             _tmpTotalSaved = _cursor.getDouble(_cursorIndexOfTotalSaved);
+            final int _tmpXp;
+            _tmpXp = _cursor.getInt(_cursorIndexOfXp);
+            final int _tmpLevel;
+            _tmpLevel = _cursor.getInt(_cursorIndexOfLevel);
             final String _tmpAchievements;
             if (_cursor.isNull(_cursorIndexOfAchievements)) {
               _tmpAchievements = null;
             } else {
               _tmpAchievements = _cursor.getString(_cursorIndexOfAchievements);
             }
-            _result = new UserStats(_tmpId,_tmpXp,_tmpStreak,_tmpLastSaveDate,_tmpTotalSaved,_tmpAchievements);
+            _result = new UserStats(_tmpId,_tmpStreak,_tmpLastSaveDate,_tmpTotalSaved,_tmpXp,_tmpLevel,_tmpAchievements);
           } else {
             _result = null;
           }

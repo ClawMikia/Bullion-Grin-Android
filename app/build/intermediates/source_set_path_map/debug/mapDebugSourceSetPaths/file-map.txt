@@ -39,10 +39,10 @@ com.bulliongrin.app-fragment-ktx-1.6.2-37 D:\.gradle\caches\transforms-4\ea063e9
 com.bulliongrin.app-recyclerview-1.1.0-38 D:\.gradle\caches\transforms-4\f0fb14a7322b3f7eae16ffb7526afd6f\transformed\recyclerview-1.1.0\res
 com.bulliongrin.app-core-ktx-1.12.0-39 D:\.gradle\caches\transforms-4\f4eb7cc3469f317c9f6c41b684a05ae3\transformed\core-ktx-1.12.0\res
 com.bulliongrin.app-emoji2-views-helper-1.2.0-40 D:\.gradle\caches\transforms-4\f94e5a5c54ba47dcbec7f9ad8cdd1258\transformed\emoji2-views-helper-1.2.0\res
-com.bulliongrin.app-pngs-41 D:\Android Studio Projects\BullionGrin\app\build\generated\res\pngs\debug
-com.bulliongrin.app-resValues-42 D:\Android Studio Projects\BullionGrin\app\build\generated\res\resValues\debug
-com.bulliongrin.app-packageDebugResources-43 D:\Android Studio Projects\BullionGrin\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.bulliongrin.app-packageDebugResources-44 D:\Android Studio Projects\BullionGrin\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.bulliongrin.app-debug-45 D:\Android Studio Projects\BullionGrin\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.bulliongrin.app-debug-46 D:\Android Studio Projects\BullionGrin\app\src\debug\res
-com.bulliongrin.app-main-47 D:\Android Studio Projects\BullionGrin\app\src\main\res
+com.bulliongrin.app-pngs-41 D:\Android Studio Projects\Bullion-Grin-Android\app\build\generated\res\pngs\debug
+com.bulliongrin.app-resValues-42 D:\Android Studio Projects\Bullion-Grin-Android\app\build\generated\res\resValues\debug
+com.bulliongrin.app-packageDebugResources-43 D:\Android Studio Projects\Bullion-Grin-Android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.bulliongrin.app-packageDebugResources-44 D:\Android Studio Projects\Bullion-Grin-Android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.bulliongrin.app-debug-45 D:\Android Studio Projects\Bullion-Grin-Android\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.bulliongrin.app-debug-46 D:\Android Studio Projects\Bullion-Grin-Android\app\src\debug\res
+com.bulliongrin.app-main-47 D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\res

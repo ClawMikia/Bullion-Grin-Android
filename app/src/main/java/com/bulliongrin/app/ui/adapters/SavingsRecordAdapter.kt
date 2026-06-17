@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bulliongrin.app.data.entity.SavingsRecord
 import com.bulliongrin.app.databinding.ItemRecordBinding
+import com.bulliongrin.app.utils.CurrencyUtils
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -25,7 +26,8 @@ class SavingsRecordAdapter : ListAdapter<SavingsRecord, SavingsRecordAdapter.Vie
 
     class ViewHolder(private val binding: ItemRecordBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(record: SavingsRecord) {
-            binding.tvAmount.text = String.format(Locale.getDefault(), "$%.2f", record.amount)
+            val context = itemView.context
+            binding.tvAmount.text = CurrencyUtils.formatAmount(context, record.amount)
             binding.tvFrequency.text = record.frequency
             
             val sdf = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())

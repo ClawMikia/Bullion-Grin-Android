@@ -9,8 +9,8 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-11-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:5:5-77
-11-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:5:22-74
+11-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:5:5-77
+11-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:5:22-74
 12    <uses-permission android:name="android.permission.WAKE_LOCK" />
 12-->[androidx.work:work-runtime:2.9.0] D:\.gradle\caches\transforms-4\815032400e75769efbb517f62cec6ca3\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
 12-->[androidx.work:work-runtime:2.9.0] D:\.gradle\caches\transforms-4\815032400e75769efbb517f62cec6ca3\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:22-65
@@ -36,63 +36,63 @@
 21-->[androidx.core:core:1.12.0] D:\.gradle\caches\transforms-4\8278dba50f4586a0c21c43c5fda17fdb\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
 22
 23    <application
-23-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:7:5-38:19
+23-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:7:5-38:19
 24        android:allowBackup="true"
-24-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:8:9-35
+24-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:8:9-35
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 25-->[androidx.core:core:1.12.0] D:\.gradle\caches\transforms-4\8278dba50f4586a0c21c43c5fda17fdb\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 26        android:debuggable="true"
 27        android:extractNativeLibs="false"
 28        android:icon="@drawable/app_icon"
-28-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:9:9-42
+28-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:9:9-42
 29        android:label="@string/app_name"
-29-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:10:9-41
+29-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:10:9-41
 30        android:supportsRtl="true"
-30-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:11:9-35
+30-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:11:9-35
 31        android:testOnly="true"
 32        android:theme="@style/Theme.BullionGrin" >
-32-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:12:9-49
+32-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:12:9-49
 33        <activity
-33-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:14:9-21:20
+33-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:14:9-21:20
 34            android:name="com.bulliongrin.app.ui.activities.MainActivity"
-34-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:15:13-55
+34-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:15:13-55
 35            android:exported="true" >
-35-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:16:13-36
+35-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:16:13-36
 36            <intent-filter>
-36-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:17:13-20:29
+36-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:17:13-20:29
 37                <action android:name="android.intent.action.MAIN" />
-37-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:18:17-69
-37-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:18:25-66
+37-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:18:17-69
+37-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:18:25-66
 38
 39                <category android:name="android.intent.category.LAUNCHER" />
-39-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:19:17-77
-39-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:19:27-74
+39-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:19:17-77
+39-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:19:27-74
 40            </intent-filter>
 41        </activity>
 42        <activity
-42-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:23:9-26:72
+42-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:23:9-26:72
 43            android:name="com.bulliongrin.app.ui.activities.AddContributionActivity"
-43-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:24:13-66
+43-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:24:13-66
 44            android:label="Add Contribution"
-44-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:25:13-45
+44-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:25:13-45
 45            android:parentActivityName="com.bulliongrin.app.ui.activities.MainActivity" />
-45-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:26:13-69
+45-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:26:13-69
 46        <activity
-46-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:28:9-31:72
+46-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:28:9-31:72
 47            android:name="com.bulliongrin.app.ui.activities.RecordsActivity"
-47-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:29:13-58
+47-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:29:13-58
 48            android:label="Savings Records"
-48-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:30:13-44
+48-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:30:13-44
 49            android:parentActivityName="com.bulliongrin.app.ui.activities.MainActivity" />
-49-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:31:13-69
+49-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:31:13-69
 50        <activity
-50-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:33:9-36:72
+50-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:33:9-36:72
 51            android:name="com.bulliongrin.app.ui.activities.SettingsActivity"
-51-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:34:13-59
+51-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:34:13-59
 52            android:label="Settings"
-52-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:35:13-37
+52-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:35:13-37
 53            android:parentActivityName="com.bulliongrin.app.ui.activities.MainActivity" />
-53-->D:\Android Studio Projects\BullionGrin\app\src\main\AndroidManifest.xml:36:13-69
+53-->D:\Android Studio Projects\Bullion-Grin-Android\app\src\main\AndroidManifest.xml:36:13-69
 54
 55        <provider
 55-->[androidx.emoji2:emoji2:1.2.0] D:\.gradle\caches\transforms-4\918e58d55708ee41f81e5aa112dd9381\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20

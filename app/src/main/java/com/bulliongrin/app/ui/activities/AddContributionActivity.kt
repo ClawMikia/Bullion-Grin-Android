@@ -5,9 +5,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.bulliongrin.app.R
 import com.bulliongrin.app.databinding.ActivityAddContributionBinding
-import com.bulliongrin.app.utils.CurrencyUtils
 import com.bulliongrin.app.viewmodel.SavingsViewModel
 
 class AddContributionActivity : AppCompatActivity() {
@@ -15,50 +13,49 @@ class AddContributionActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddContributionBinding
     private val viewModel: SavingsViewModel by viewModels()
 
-    private val frequencies = arrayOf("Daily", "Weekly", "Monthly", "Quarterly", "Annually")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddContributionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupUI()
+        setupDropdown()
         setupListeners()
     }
 
-    private fun setupUI() {
-        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, frequencies)
+    private fun setupDropdown() {
+        val frequencies = arrayOf("Daily", "Weekly", "Monthly", "Quarterly", "Annually")
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, frequencies)
         binding.actvFrequency.setAdapter(adapter)
-        binding.actvFrequency.setText(frequencies[0], false)
-
-        // Set currency symbol in TextInputLayout
-        binding.tilAmount.prefixText = CurrencyUtils.getCurrencySymbol(this)
     }
 
     private fun setupListeners() {
         binding.btnSave.setOnClickListener {
-            saveRecord()
+            saveContribution()
         }
     }
 
-    private fun saveRecord() {
+    private fun saveContribution() {
         val amountStr = binding.etAmount.text.toString()
-        val frequency = binding.actvFrequency.text.toString()
         val note = binding.etNote.text.toString()
+        val frequency = binding.actvFrequency.text.toString()
 
         if (amountStr.isBlank()) {
-            binding.tilAmount.error = "Please enter an amount"
+            Toast.makeText(this, "Please enter an amount", Toast.LENGTH_SHORT).show()
             return
         }
 
         val amount = amountStr.toDoubleOrNull()
         if (amount == null || amount <= 0) {
-            binding.tilAmount.error = "Please enter a valid amount"
+            Toast.makeText(this, "Please enter a valid amount", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (frequency.isBlank()) {
+            Toast.makeText(this, "Please select a frequency", Toast.LENGTH_SHORT).show()
             return
         }
 
         viewModel.insertRecord(amount, frequency, note)
-        Toast.makeText(this, "Contribution saved successfully!", Toast.LENGTH_SHORT).show()
         finish()
     }
 }

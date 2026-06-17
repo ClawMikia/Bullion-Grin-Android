@@ -65,8 +65,10 @@ string records
 string save
 string select_currency
 string settings
+string streak_format
 string theme_toggle
 string total_saved
 string weekly
+string xp_format
 string xp_points
 style Theme.BullionGrin

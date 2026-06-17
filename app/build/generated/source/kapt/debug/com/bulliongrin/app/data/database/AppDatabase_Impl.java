@@ -37,9 +37,9 @@ public final class AppDatabase_Impl extends AppDatabase {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `savings_records` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `amount` REAL NOT NULL, `date` INTEGER NOT NULL, `frequency` TEXT NOT NULL, `note` TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `user_stats` (`id` INTEGER NOT NULL, `xp` INTEGER NOT NULL, `streak` INTEGER NOT NULL, `lastSaveDate` INTEGER NOT NULL, `totalSaved` REAL NOT NULL, `achievements` TEXT NOT NULL, PRIMARY KEY(`id`))");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `user_stats` (`id` INTEGER NOT NULL, `streak` INTEGER NOT NULL, `lastSaveDate` INTEGER NOT NULL, `totalSaved` REAL NOT NULL, `xp` INTEGER NOT NULL, `level` INTEGER NOT NULL, `achievements` TEXT NOT NULL, PRIMARY KEY(`id`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c6a94c10a03466c59ad06b7e8c10b7c1')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'eae7dcc67a36dbb3bbe1eb4631849d7c')");
       }
 
       @Override
@@ -104,12 +104,13 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoSavingsRecords + "\n"
                   + " Found:\n" + _existingSavingsRecords);
         }
-        final HashMap<String, TableInfo.Column> _columnsUserStats = new HashMap<String, TableInfo.Column>(6);
+        final HashMap<String, TableInfo.Column> _columnsUserStats = new HashMap<String, TableInfo.Column>(7);
         _columnsUserStats.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsUserStats.put("xp", new TableInfo.Column("xp", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsUserStats.put("streak", new TableInfo.Column("streak", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsUserStats.put("lastSaveDate", new TableInfo.Column("lastSaveDate", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsUserStats.put("totalSaved", new TableInfo.Column("totalSaved", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUserStats.put("xp", new TableInfo.Column("xp", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUserStats.put("level", new TableInfo.Column("level", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsUserStats.put("achievements", new TableInfo.Column("achievements", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysUserStats = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesUserStats = new HashSet<TableInfo.Index>(0);
@@ -122,7 +123,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "c6a94c10a03466c59ad06b7e8c10b7c1", "564da2b73553180d57d7ef49ee370294");
+    }, "eae7dcc67a36dbb3bbe1eb4631849d7c", "2953ad233e1656905f7cbf131dbb0524");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

@@ -10,7 +10,7 @@ class SavingsWorker(context: Context, params: WorkerParameters) : Worker(context
         NotificationHelper.showNotification(
             applicationContext,
             "Bullion Grin Reminder",
-            "Time to add your daily contribution!"
+            "Time to add your daily contribution!",
         )
         return Result.success()
     }

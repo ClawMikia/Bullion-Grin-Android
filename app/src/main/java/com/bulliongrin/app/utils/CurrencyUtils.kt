@@ -1,6 +1,7 @@
 package com.bulliongrin.app.utils
 
 import android.content.Context
+import androidx.core.content.edit
 import java.text.NumberFormat
 import java.util.Currency
 import java.util.Locale
@@ -16,7 +17,9 @@ object CurrencyUtils {
 
     fun saveSelectedCurrencyCode(context: Context, code: String) {
         val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        prefs.edit().putString(KEY_CURRENCY_CODE, code).apply()
+        prefs.edit {
+            putString(KEY_CURRENCY_CODE, code)
+        }
     }
 
     fun formatAmount(context: Context, amount: Double): String {
@@ -31,18 +34,11 @@ object CurrencyUtils {
         }
     }
 
-    fun getCurrencySymbol(context: Context): String {
-        val code = getSelectedCurrencyCode(context)
-        return try {
-            Currency.getInstance(code).symbol
-        } catch (e: Exception) {
-            code
-        }
-    }
-
     fun getAllCurrencies(): List<Pair<String, String>> {
         return Currency.getAvailableCurrencies()
+            .asSequence()
             .sortedBy { it.currencyCode }
             .map { it.currencyCode to "${it.currencyCode} - ${it.displayName}" }
+            .toList()
     }
 }
